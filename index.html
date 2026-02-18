@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <title>Nome del Laboratorio</title>
+  <meta name="description" content="Sito web del Laboratorio: ricerca, persone, pubblicazioni e contatti." />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="reset.min.css" />
+  <link rel="stylesheet" href="style_lab.css" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Vai al contenuto</a>
+
+  <!-- Header -->
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a class="brand" href="#top" aria-label="Home laboratorio">
+        <span class="brand__title">Nome del Laboratorio</span>
+        <span class="brand__subtitle">Dipartimento / Università</span>
+      </a>
+
+      <button class="menu-toggle" id="mobile-menu" aria-label="Apri menu" aria-expanded="false" aria-controls="primary-nav">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav" id="primary-nav" aria-label="Navigazione principale">
+        <a href="#overview">Overview</a>
+        <a href="#research">Linee di ricerca</a>
+        <a href="#people">People</a>
+        <a href="#publications">Publications</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="top">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <h1>titolo</h1>
+        <p>
+          descrizione del laboratiorio?
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#research">Esplora la ricerca</a>
+          <a class="btn btn-ghost" href="#contact">Contatti</a>
+        </div>
+      </div>
+
+      <figure class="hero-media" aria-label="Immagine di copertina (facoltativa)">
+        <!-- Sostituisci con un'immagine del lab (es. microscopia, grafi, foto gruppo) -->
+        <img src="hero.jpg" alt="Immagine del laboratorio (sostituire hero.jpg)" loading="lazy" />
+      </figure>
+    </div>
+  </section>
+
+  <!-- Layout (TOC + contenuto) -->
+  <div class="layout">
+    <aside class="toc" aria-label="Indice della pagina">
+      <div class="toc-inner">
+        <h2>On this page</h2>
+        <ul>
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#research">Lines of research</a></li>
+          <li><a href="#people">People</a></li>
+          <li><a href="#publications">Publications</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <main class="content" id="main">
+      <!-- Overview -->
+      <section class="section" id="overview">
+        <h2>Overview</h2>
+        <p>
+          testo introduttivo
+        </p>
+
+        <ul class="bullet">
+          <li>prova</li>
+          <li>prova</li>
+          <li>prova</li>
+          <li>prova</li>
+        </ul>
+      </section>
+
+      <!-- Lines of research -->
+      <section class="section" id="research">
+        <h2>Lines of research</h2>
+
+        <div class="cards">
+          <article class="card" id="modularity">
+            <div class="card-media">
+              <img src="research-1.jpg" alt="Immagine research 1 (sostituire research-1.jpg)" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <h3>Organizzazione modulare</h3>
+              <p>
+                prova
+              </p>
+            </div>
+          </article>
+
+          <article class="card" id="structure-function">
+            <div class="card-media">
+              <img src="research-2.jpg" alt="Immagine research 2 (sostituire research-2.jpg)" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <h3>Relazioni struttura–funzione</h3>
+              <p>
+                prova
+              </p>
+            </div>
+          </article>
+
+          <article class="card" id="time-varying">
+            <div class="card-media">
+              <img src="research-3.jpg" alt="Immagine research 3 (sostituire research-3.jpg)" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <h3>Connettività time-varying</h3>
+              <p>
+                prova
+              </p>
+            </div>
+          </article>
+
+          <article class="card" id="cross-species">
+            <div class="card-media">
+              <img src="research-4.jpg" alt="Immagine research 4 (sostituire research-4.jpg)" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <h3>Investigazioni cross-species</h3>
+              <p>
+                prova
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- People -->
+      <section class="section" id="people">
+        <h2>People</h2>
+
+        <div class="people-grid">
+          <article class="person">
+            <img src="person-1.jpg" alt="Foto: Nome Cognome (sostituire person-1.jpg)" loading="lazy" />
+            <div>
+              <h3>Nome Cognome</h3>
+              <p class="meta">PI / Role</p>
+              <p class="links">
+                <a href="#" aria-label="Email">Email</a>
+                <span aria-hidden="true">·</span>
+                <a href="#" aria-label="Google Scholar">Scholar</a>
+                <span aria-hidden="true">·</span>
+                <a href="#" aria-label="GitHub">GitHub</a>
+              </p>
+            </div>
+          </article>
+
+          <article class="person">
+            <img src="person-2.jpg" alt="Foto: Nome Cognome (sostituire person-2.jpg)" loading="lazy" />
+            <div>
+              <h3>Nome Cognome</h3>
+              <p class="meta">PhD Student / Role</p>
+              <p class="links">
+                <a href="#" aria-label="Email">Email</a>
+                <span aria-hidden="true">·</span>
+                <a href="#" aria-label="Website">Website</a>
+              </p>
+            </div>
+          </article>
+        </div>
+
+        <p class="note">
+          posizioni aperte?.
+        </p>
+      </section>
+
+      <!-- Publications -->
+      <section class="section" id="publications">
+        <h2>Publications</h2>
+        <p>
+          mettiamo lista?
+        </p>
+
+        <ol class="pubs">
+          <li><strong>Autori</strong> (Anno). Titolo. <em>Journal/Conference</em>. <a href="#">PDF</a> · <a href="#">DOI</a></li>
+          <li><strong>Autori</strong> (Anno). Titolo. <em>Journal/Conference</em>. <a href="#">PDF</a> · <a href="#">DOI</a></li>
+          <li><strong>Autori</strong> (Anno). Titolo. <em>Journal/Conference</em>. <a href="#">PDF</a> · <a href="#">DOI</a></li>
+        </ol>
+      </section>
+
+      <!-- Contact -->
+      <section class="section" id="contact">
+        <h2>Contact</h2>
+
+        <div class="contact-grid">
+          <div class="contact-card">
+            <h3>Scrivici</h3>
+            <p class="meta">Email</p>
+            <p><a href="mailto:lab@example.com">lab@example.com</a></p>
+
+            <p class="meta" style="margin-top: 14px;">Indirizzo</p>
+            <p>Via Esempio 1, 00100 Roma (RM)</p>
+
+            <p class="meta" style="margin-top: 14px;">Social</p>
+            <p class="links">
+              <a href="#">GitHub</a> · <a href="#">X</a> · <a href="#">LinkedIn</a>
+            </p>
+          </div>
+
+          <form class="contact-form" action="#" method="post">
+            <h3>Messaggio</h3>
+
+            <label>
+              <span>Nome</span>
+              <input type="text" name="name" placeholder="Nome Cognome" required>
+            </label>
+
+            <label>
+              <span>Email</span>
+              <input type="email" name="email" placeholder="nome@dominio.it" required>
+            </label>
+
+            <label>
+              <span>Messaggio</span>
+              <textarea name="message" placeholder="Scrivi qui..." required></textarea>
+            </label>
+
+            <button class="btn btn-primary" type="submit">Invia</button>
+            <p class="note">DA COLLEGARE FORM!!!</p>
+          </form>
+        </div>
+      </section>
+
+      <footer class="site-footer">
+        <p>© <span id="year"></span> Nome del Laboratorio · Tutti i diritti riservati</p>
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    // anno footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // menu mobile
+    const btn = document.getElementById('mobile-menu');
+    const nav = document.getElementById('primary-nav');
+
+    btn.addEventListener('click', () => {
+      const isOpen = nav.classList.toggle('nav-open');
+      btn.classList.toggle('active', isOpen);
+      btn.setAttribute('aria-expanded', String(isOpen));
+      document.body.classList.toggle('menu-open', isOpen);
+    });
+
+    // chiudi quando clicchi un link
+    nav.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', () => {
+        nav.classList.remove('nav-open');
+        btn.classList.remove('active');
+        btn.setAttribute('aria-expanded', 'false');
+        document.body.classList.remove('menu-open');
+      });
+    });
+
+    // chiudi cliccando fuori
+    document.addEventListener('click', (e) => {
+      if (!nav.contains(e.target) && !btn.contains(e.target)) {
+        nav.classList.remove('nav-open');
+        btn.classList.remove('active');
+        btn.setAttribute('aria-expanded', 'false');
+        document.body.classList.remove('menu-open');
+      }
+    });
+  </script>
+</body>
+</html>
