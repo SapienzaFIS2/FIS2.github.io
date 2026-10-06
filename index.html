@@ -24,6 +24,31 @@
   <!-- Header -->
   <header class="site-header" role="banner">
     <div class="header-inner">
+      <div class="language-switch" role="group" aria-label="Lingua / Language">
+          <button
+            type="button"
+            class="language-button"
+            data-lang="it"
+            lang="it"
+            aria-label="Italiano"
+            aria-pressed="true"
+          >
+            <span aria-hidden="true">🇮🇹</span>
+            <span class="language-code">IT</span>
+          </button>
+        
+          <button
+            type="button"
+            class="language-button"
+            data-lang="en"
+            lang="en"
+            aria-label="English"
+            aria-pressed="false"
+          >
+            <span aria-hidden="true">🇬🇧</span>
+            <span class="language-code">EN</span>
+          </button>
+        </div>
       <a class="brand" href="#top" aria-label="Home laboratorio">
         <span class="brand__title">Nome del Laboratorio</span>
         <span class="brand__subtitle">Dipartimento / Università</span>
@@ -152,43 +177,98 @@
       </section>
 
       <!-- People -->
-      <section class="section" id="people">
-        <h2>People</h2>
+<!-- People -->
+<section class="section" id="people">
+  <h2 data-i18n="people">Persone</h2>
 
-        <div class="people-grid">
-          <article class="person">
-            <img src="person-1.jpg" alt="Foto: Nome Cognome (sostituire person-1.jpg)" loading="lazy" />
-            <div>
-              <h3>Nome Cognome</h3>
-              <p class="meta">PI / Role</p>
-              <p class="links">
-                <a href="#" aria-label="Email">Email</a>
-                <span aria-hidden="true">·</span>
-                <a href="#" aria-label="Google Scholar">Scholar</a>
-                <span aria-hidden="true">·</span>
-                <a href="#" aria-label="GitHub">GitHub</a>
-              </p>
-            </div>
-          </article>
+  <!-- Professori: 2 box -->
+  <div class="people-group">
+    <h3 class="people-group-title" data-i18n="professors">
+      Professori
+    </h3>
 
-          <article class="person">
-            <img src="person-2.jpg" alt="Foto: Nome Cognome (sostituire person-2.jpg)" loading="lazy" />
-            <div>
-              <h3>Nome Cognome</h3>
-              <p class="meta">PhD Student / Role</p>
-              <p class="links">
-                <a href="#" aria-label="Email">Email</a>
-                <span aria-hidden="true">·</span>
-                <a href="#" aria-label="Website">Website</a>
-              </p>
-            </div>
-          </article>
+    <div class="people-grid">
+      <article class="person">
+        <!-- Puoi sostituire questo div con una foto -->
+        <div class="person-avatar" aria-hidden="true">NC</div>
+        <div>
+          <h4>Nome Cognome</h4>
+          <p class="meta" data-i18n="professor">Professore</p>
         </div>
+      </article>
 
-        <p class="note">
-          posizioni aperte?.
-        </p>
-      </section>
+      <article class="person">
+        <div class="person-avatar" aria-hidden="true">NC</div>
+        <div>
+          <h4>Nome Cognome</h4>
+          <p class="meta" data-i18n="professor">Professore</p>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <!-- PhD students: 3 box -->
+  <div class="people-group">
+    <h3 class="people-group-title" data-i18n="phdStudents">
+      Dottorandi
+    </h3>
+
+    <div class="people-grid">
+      <article class="person">
+        <div class="person-avatar" aria-hidden="true">NC</div>
+        <div>
+          <h4>Nome Cognome</h4>
+          <p class="meta" data-i18n="phdStudent">Dottorando/a</p>
+        </div>
+      </article>
+
+      <article class="person">
+        <div class="person-avatar" aria-hidden="true">NC</div>
+        <div>
+          <h4>Nome Cognome</h4>
+          <p class="meta" data-i18n="phdStudent">Dottorando/a</p>
+        </div>
+      </article>
+
+      <article class="person">
+        <div class="person-avatar" aria-hidden="true">NC</div>
+        <div>
+          <h4>Nome Cognome</h4>
+          <p class="meta" data-i18n="phdStudent">Dottorando/a</p>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <!-- Assegnisti di ricerca: 2 box -->
+  <div class="people-group">
+    <h3 class="people-group-title" data-i18n="researchFellows">
+      Assegnisti di ricerca
+    </h3>
+
+    <div class="people-grid">
+      <article class="person">
+        <div class="person-avatar" aria-hidden="true">NC</div>
+        <div>
+          <h4>Nome Cognome</h4>
+          <p class="meta" data-i18n="researchFellow">
+            Assegnista di ricerca
+          </p>
+        </div>
+      </article>
+
+      <article class="person">
+        <div class="person-avatar" aria-hidden="true">NC</div>
+        <div>
+          <h4>Nome Cognome</h4>
+          <p class="meta" data-i18n="researchFellow">
+            Assegnista di ricerca
+          </p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
 
       <!-- Publications -->
       <section class="section" id="publications">
