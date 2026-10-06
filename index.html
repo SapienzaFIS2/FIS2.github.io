@@ -1,679 +1,640 @@
 <!doctype html>
 <html lang="it">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Nome del Laboratorio</title>
-  <meta name="description" content="Sito web del Laboratorio: ricerca, persone, pubblicazioni e contatti." />
+  <title>SapienSeq | Sapienza</title>
+  <meta
+    name="description"
+    content="SapienSeq: bioingegneria e bioinformatica per lo studio delle Tumor Educated Platelets nell’ambito del progetto FIS2."
+  >
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="reset.min.css" />
-  <link rel="stylesheet" href="style_lab.css" />
-
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style_lab.css">
 </head>
 
 <body>
-  <a class="skip-link" href="#main">Vai al contenuto</a>
+  <a class="skip-link" href="#main" data-i18n="skipContent">
+    Vai al contenuto
+  </a>
 
-  <!-- Header -->
-  <header class="site-header" role="banner">
+  <!-- HEADER -->
+  <header class="site-header">
     <div class="header-inner">
-      <div class="language-switch" role="group" aria-label="Lingua / Language">
-          <button
-            type="button"
-            class="language-button"
-            data-lang="it"
-            lang="it"
-            aria-label="Italiano"
-            aria-pressed="true"
-          >
-            <span aria-hidden="true">🇮🇹</span>
-            <span class="language-code">IT</span>
-          </button>
-        
-          <button
-            type="button"
-            class="language-button"
-            data-lang="en"
-            lang="en"
-            aria-label="English"
-            aria-pressed="false"
-          >
-            <span aria-hidden="true">🇬🇧</span>
-            <span class="language-code">EN</span>
-          </button>
-        </div>
-      <a class="brand" href="#top" aria-label="Home laboratorio">
-        <span class="brand__title">Nome del Laboratorio</span>
-        <span class="brand__subtitle">Dipartimento / Università</span>
+      <a
+        class="brand"
+        href="#top"
+        data-i18n-aria="homeLabel"
+        aria-label="SapienSeq — pagina iniziale"
+      >
+        <span class="brand__title">SapienSeq</span>
+        <span class="brand__subtitle">DIAG · Sapienza</span>
       </a>
 
-      <button class="menu-toggle" id="mobile-menu" aria-label="Apri menu" aria-expanded="false" aria-controls="primary-nav">
-        <span></span><span></span><span></span>
-      </button>
-
-      <nav class="nav" id="primary-nav" aria-label="Navigazione principale">
-        <a href="#overview">Overview</a>
-        <a href="#research">Linee di ricerca</a>
-        <a href="#people">People</a>
-        <a href="#publications">Publications</a>
-        <a href="#contact">Contact</a>
+      <nav
+        class="nav"
+        id="primary-nav"
+        data-i18n-aria="navigation"
+        aria-label="Navigazione principale"
+      >
+        <a href="#overview" data-i18n="overview">Presentazione</a>
+        <a href="#research" data-i18n="research">Ricerca</a>
+        <a href="#people" data-i18n="people">Persone</a>
+        <a href="#publications" data-i18n="publications">
+          Pubblicazioni
+        </a>
+        <a href="#contact" data-i18n="contact">Contatti</a>
       </nav>
+
+      <!-- BANDIERE -->
+      <div
+        class="language-switch"
+        role="group"
+        aria-label="Lingua / Language"
+      >
+        <button
+          class="language-button"
+          type="button"
+          data-lang="it"
+          lang="it"
+          aria-label="Italiano"
+          title="Italiano"
+          aria-pressed="true"
+        >
+          <!-- Bandiera italiana -->
+          <svg
+            class="flag"
+            viewBox="0 0 60 40"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <path fill="#009246" d="M0 0h20v40H0z"/>
+            <path fill="#ffffff" d="M20 0h20v40H20z"/>
+            <path fill="#ce2b37" d="M40 0h20v40H40z"/>
+          </svg>
+        </button>
+
+        <button
+          class="language-button"
+          type="button"
+          data-lang="en"
+          lang="en"
+          aria-label="English"
+          title="English"
+          aria-pressed="false"
+        >
+          <!-- Bandiera britannica per la lingua inglese -->
+          <svg
+            class="flag"
+            viewBox="0 0 60 40"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <defs>
+              <clipPath id="uk-flag-clip">
+                <path d="M0 0h60v40H0z"/>
+              </clipPath>
+              <clipPath id="uk-diagonal-clip">
+                <path d="M30 20H60V40z M30 20V40H0z
+                         M30 20H0V0z M30 20V0H60z"/>
+              </clipPath>
+            </defs>
+
+            <g clip-path="url(#uk-flag-clip)">
+              <path fill="#012169" d="M0 0h60v40H0z"/>
+              <path
+                d="M0 0l60 40M60 0L0 40"
+                stroke="#ffffff"
+                stroke-width="8"
+              />
+              <path
+                d="M0 0l60 40M60 0L0 40"
+                stroke="#c8102e"
+                stroke-width="5"
+                clip-path="url(#uk-diagonal-clip)"
+              />
+              <path
+                d="M30 0v40M0 20h60"
+                stroke="#ffffff"
+                stroke-width="13"
+              />
+              <path
+                d="M30 0v40M0 20h60"
+                stroke="#c8102e"
+                stroke-width="8"
+              />
+            </g>
+          </svg>
+        </button>
+      </div>
+
+      <button
+        class="menu-toggle"
+        id="mobile-menu"
+        type="button"
+        aria-label="Apri menu"
+        aria-expanded="false"
+        aria-controls="primary-nav"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </header>
 
-  <!-- Hero -->
-  <section class="hero" id="top">
+  <!-- INTRODUZIONE -->
+  <section class="hero" id="top" aria-labelledby="hero-title">
     <div class="hero-inner">
       <div class="hero-copy">
-        <h1>titolo</h1>
-        <p>
-          descrizione del laboratiorio?
+        <p class="eyebrow">Sapienza</p>
+        <h1 id="hero-title">SapienSeq</h1>
+
+        <p class="hero-description">
+          <span data-i18n="introFirst">
+            SapienSeq unisce bioingegneria e bioinformatica per
+            studiare le Tumor Educated Platelets.
+          </span>
+          <span data-i18n="introSecond">
+            La nostra ricerca si sviluppa nell’ambito del progetto FIS2.
+          </span>
         </p>
 
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#research">Esplora la ricerca</a>
-          <a class="btn btn-ghost" href="#contact">Contatti</a>
+          <a
+            class="btn btn-primary"
+            href="#research"
+            data-i18n="exploreResearch"
+          >
+            Esplora la ricerca
+          </a>
+          <a
+            class="btn btn-ghost"
+            href="#people"
+            data-i18n="meetTeam"
+          >
+            Il nostro gruppo
+          </a>
         </div>
       </div>
 
-      <figure class="hero-media" aria-label="Immagine di copertina (facoltativa)">
-        <!-- Sostituisci con un'immagine del lab (es. microscopia, grafi, foto gruppo) -->
-        <img src="hero.jpg" alt="Immagine del laboratorio (sostituire hero.jpg)" loading="lazy" />
-      </figure>
+      <div class="hero-panel">
+        <span class="project-label" data-i18n="project">Progetto</span>
+        <h2>FIS2</h2>
+        <p lang="en">Tumor Educated Platelets</p>
+        <span class="project-tag" data-i18n="disciplines">
+          Bioingegneria · Bioinformatica
+        </span>
+      </div>
     </div>
   </section>
 
-  <!-- Layout (TOC + contenuto) -->
+  <!-- INDICE E CONTENUTI -->
   <div class="layout">
-    <aside class="toc" aria-label="Indice della pagina">
+    <aside
+      class="toc"
+      data-i18n-aria="pageIndex"
+      aria-label="Indice della pagina"
+    >
       <div class="toc-inner">
-        <h2>On this page</h2>
+        <h2 data-i18n="pageIndex">In questa pagina</h2>
         <ul>
-          <li><a href="#overview">Overview</a></li>
-          <li><a href="#research">Lines of research</a></li>
-          <li><a href="#people">People</a></li>
-          <li><a href="#publications">Publications</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li>
+            <a href="#overview" data-i18n="overview">Presentazione</a>
+          </li>
+          <li>
+            <a href="#research" data-i18n="research">Ricerca</a>
+          </li>
+          <li>
+            <a href="#people" data-i18n="people">Persone</a>
+          </li>
+          <li>
+            <a href="#publications" data-i18n="publications">
+              Pubblicazioni
+            </a>
+          </li>
+          <li>
+            <a href="#contact" data-i18n="contact">Contatti</a>
+          </li>
         </ul>
       </div>
     </aside>
 
-    <main class="content" id="main">
-      <!-- Overview -->
-      <section class="section" id="overview">
-        <h2>Overview</h2>
-        <p>
-          testo introduttivo
-        </p>
+    <main class="content" id="main" tabindex="-1">
 
-        <ul class="bullet">
-          <li>prova</li>
-          <li>prova</li>
-          <li>prova</li>
-          <li>prova</li>
-        </ul>
+      <!-- PRESENTAZIONE -->
+      <section class="section" id="overview">
+        <h2 data-i18n="overview">Presentazione</h2>
+        <p data-i18n="overviewText">
+          SapienSeq è un laboratorio di Sapienza presso il Dipartimento
+          di Ingegneria Informatica, Automatica e Gestionale.
+          Il gruppo si occupa di bioingegneria e bioinformatica.
+        </p>
       </section>
 
-      <!-- Lines of research -->
+      <!-- RICERCA -->
       <section class="section" id="research">
-        <h2>Lines of research</h2>
+        <h2 data-i18n="research">Ricerca</h2>
 
         <div class="cards">
-          <article class="card" id="modularity">
-            <div class="card-media">
-              <img src="research-1.jpg" alt="Immagine research 1 (sostituire research-1.jpg)" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <h3>Organizzazione modulare</h3>
-              <p>
-                prova
-              </p>
-            </div>
-          </article>
-
-          <article class="card" id="structure-function">
-            <div class="card-media">
-              <img src="research-2.jpg" alt="Immagine research 2 (sostituire research-2.jpg)" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <h3>Relazioni struttura–funzione</h3>
-              <p>
-                prova
-              </p>
-            </div>
-          </article>
-
-          <article class="card" id="time-varying">
-            <div class="card-media">
-              <img src="research-3.jpg" alt="Immagine research 3 (sostituire research-3.jpg)" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <h3>Connettività time-varying</h3>
-              <p>
-                prova
-              </p>
-            </div>
-          </article>
-
-          <article class="card" id="cross-species">
-            <div class="card-media">
-              <img src="research-4.jpg" alt="Immagine research 4 (sostituire research-4.jpg)" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <h3>Investigazioni cross-species</h3>
-              <p>
-                prova
-              </p>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <!-- People -->
-<!-- People -->
-<section class="section" id="people">
-  <h2 data-i18n="people">Persone</h2>
-
-  <!-- Professori: 2 box -->
-  <div class="people-group">
-    <h3 class="people-group-title" data-i18n="professors">
-      Professori
-    </h3>
-
-    <div class="people-grid">
-      <article class="person">
-        <!-- Puoi sostituire questo div con una foto -->
-        <div class="person-avatar" aria-hidden="true">NC</div>
-        <div>
-          <h4>Nome Cognome</h4>
-          <p class="meta" data-i18n="professor">Professore</p>
-        </div>
-      </article>
-
-      <article class="person">
-        <div class="person-avatar" aria-hidden="true">NC</div>
-        <div>
-          <h4>Nome Cognome</h4>
-          <p class="meta" data-i18n="professor">Professore</p>
-        </div>
-      </article>
-    </div>
-  </div>
-
-  <!-- PhD students: 3 box -->
-  <div class="people-group">
-    <h3 class="people-group-title" data-i18n="phdStudents">
-      Dottorandi
-    </h3>
-
-    <div class="people-grid">
-      <article class="person">
-        <div class="person-avatar" aria-hidden="true">NC</div>
-        <div>
-          <h4>Nome Cognome</h4>
-          <p class="meta" data-i18n="phdStudent">Dottorando/a</p>
-        </div>
-      </article>
-
-      <article class="person">
-        <div class="person-avatar" aria-hidden="true">NC</div>
-        <div>
-          <h4>Nome Cognome</h4>
-          <p class="meta" data-i18n="phdStudent">Dottorando/a</p>
-        </div>
-      </article>
-
-      <article class="person">
-        <div class="person-avatar" aria-hidden="true">NC</div>
-        <div>
-          <h4>Nome Cognome</h4>
-          <p class="meta" data-i18n="phdStudent">Dottorando/a</p>
-        </div>
-      </article>
-    </div>
-  </div>
-
-  <!-- Assegnisti di ricerca: 2 box -->
-  <div class="people-group">
-    <h3 class="people-group-title" data-i18n="researchFellows">
-      Assegnisti di ricerca
-    </h3>
-
-    <div class="people-grid">
-      <article class="person">
-        <div class="person-avatar" aria-hidden="true">NC</div>
-        <div>
-          <h4>Nome Cognome</h4>
-          <p class="meta" data-i18n="researchFellow">
-            Assegnista di ricerca
-          </p>
-        </div>
-      </article>
-
-      <article class="person">
-        <div class="person-avatar" aria-hidden="true">NC</div>
-        <div>
-          <h4>Nome Cognome</h4>
-          <p class="meta" data-i18n="researchFellow">
-            Assegnista di ricerca
-          </p>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-      <!-- Publications -->
-      <section class="section" id="publications">
-        <h2>Publications</h2>
-        <p>
-          mettiamo lista?
-        </p>
-
-        <ol class="pubs">
-          <li><strong>Autori</strong> (Anno). Titolo. <em>Journal/Conference</em>. <a href="#">PDF</a> · <a href="#">DOI</a></li>
-          <li><strong>Autori</strong> (Anno). Titolo. <em>Journal/Conference</em>. <a href="#">PDF</a> · <a href="#">DOI</a></li>
-          <li><strong>Autori</strong> (Anno). Titolo. <em>Journal/Conference</em>. <a href="#">PDF</a> · <a href="#">DOI</a></li>
-        </ol>
-      </section>
-
-      <!-- Contact -->
-      <section class="section" id="contact">
-        <h2>Contact</h2>
-
-        <div class="contact-grid">
-          <div class="contact-card">
-            <h3>Scrivici</h3>
-            <p class="meta">Email</p>
-            <p><a href="mailto:lab@example.com">lab@example.com</a></p>
-
-            <p class="meta" style="margin-top: 14px;">Indirizzo</p>
-            <p>Via Esempio 1, 00100 Roma (RM)</p>
-
-            <p class="meta" style="margin-top: 14px;">Social</p>
-            <p class="links">
-              <a href="#">GitHub</a> · <a href="#">X</a> · <a href="#">LinkedIn</a>
+          <article class="card">
+            <h3 data-i18n="bioengineering">Bioingegneria</h3>
+            <p data-i18n="bioengineeringText">
+              Approcci ingegneristici allo studio dei sistemi biologici.
             </p>
+          </article>
+
+          <article class="card">
+            <h3 data-i18n="bioinformatics">Bioinformatica</h3>
+            <p data-i18n="bioinformaticsText">
+              Metodi computazionali per l’analisi dei dati biologici.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3 lang="en">Tumor Educated Platelets</h3>
+            <p data-i18n="plateletsText">
+              Studio delle Tumor Educated Platelets nell’ambito
+              del progetto FIS2.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3 data-i18n="fisProject">Progetto FIS2</h3>
+            <p data-i18n="fisText">
+              Il progetto nell’ambito del quale sviluppiamo
+              la nostra ricerca.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- PERSONE -->
+      <section class="section" id="people">
+        <h2 data-i18n="people">Persone</h2>
+
+        <div class="people-group">
+          <h3 class="people-group-title" data-i18n="professors">
+            Professori
+          </h3>
+
+          <div class="people-grid">
+            <article class="person">
+              <div class="person-avatar" aria-hidden="true">MP</div>
+              <div class="person-info">
+                <h4>Manuela Petti</h4>
+                <p class="meta" data-i18n="professorFemale">
+                  Professoressa
+                </p>
+                <span class="head-badge" data-i18n="head">
+                  Responsabile del laboratorio
+                </span>
+              </div>
+            </article>
+
+            <article class="person">
+              <div class="person-avatar" aria-hidden="true">LF</div>
+              <div class="person-info">
+                <h4>Lorenzo Farina</h4>
+                <p class="meta" data-i18n="professorMale">Professore</p>
+              </div>
+            </article>
           </div>
+        </div>
 
-          <form class="contact-form" action="#" method="post">
-            <h3>Messaggio</h3>
+        <div class="people-group">
+          <h3 class="people-group-title" data-i18n="phdStudents">
+            Dottorandi
+          </h3>
 
-            <label>
-              <span>Nome</span>
-              <input type="text" name="name" placeholder="Nome Cognome" required>
-            </label>
+          <div class="people-grid">
+            <article class="person">
+              <div class="person-avatar" aria-hidden="true">MM</div>
+              <div class="person-info">
+                <h4>Mattia Manna</h4>
+                <p class="meta" data-i18n="phdStudent">Dottorando</p>
+              </div>
+            </article>
 
-            <label>
-              <span>Email</span>
-              <input type="email" name="email" placeholder="nome@dominio.it" required>
-            </label>
+            <article class="person">
+              <div class="person-avatar" aria-hidden="true">SR</div>
+              <div class="person-info">
+                <h4>Stefano Rinaldi</h4>
+                <p class="meta" data-i18n="phdStudent">Dottorando</p>
+              </div>
+            </article>
 
-            <label>
-              <span>Messaggio</span>
-              <textarea name="message" placeholder="Scrivi qui..." required></textarea>
-            </label>
+            <article class="person">
+              <div class="person-avatar" aria-hidden="true">AT</div>
+              <div class="person-info">
+                <h4>Alessandro Taraborelli</h4>
+                <p class="meta" data-i18n="phdStudent">Dottorando</p>
+              </div>
+            </article>
+          </div>
+        </div>
 
-            <button class="btn btn-primary" type="submit">Invia</button>
-            <p class="note">DA COLLEGARE FORM!!!</p>
-          </form>
+        <div class="people-group">
+          <h3 class="people-group-title" data-i18n="researchFellows">
+            Assegnisti di ricerca
+          </h3>
+
+          <div class="people-grid">
+            <article class="person">
+              <div class="person-avatar" aria-hidden="true">PM</div>
+              <div class="person-info">
+                <h4>Paolo Meli</h4>
+                <p class="meta" data-i18n="researchFellow">
+                  Assegnista di ricerca
+                </p>
+              </div>
+            </article>
+
+            <article class="person">
+              <div class="person-avatar" aria-hidden="true">FP</div>
+              <div class="person-info">
+                <h4>Francesca Possenti</h4>
+                <p class="meta" data-i18n="researchFellow">
+                  Assegnista di ricerca
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- PUBBLICAZIONI -->
+      <section class="section" id="publications">
+        <h2 data-i18n="publications">Pubblicazioni</h2>
+        <p class="coming-soon" data-i18n="comingSoon">
+          In aggiornamento
+        </p>
+      </section>
+
+      <!-- CONTATTI -->
+      <section class="section" id="contact">
+        <h2 data-i18n="contact">Contatti</h2>
+
+        <div class="contact-card">
+          <h3>SapienSeq</h3>
+          <p data-i18n="department">
+            Dipartimento di Ingegneria Informatica, Automatica e Gestionale
+          </p>
+          <p>Sapienza</p>
         </div>
       </section>
 
       <footer class="site-footer">
-        <p>© <span id="year"></span> Nome del Laboratorio · Tutti i diritti riservati</p>
+        <p>
+          © <span id="year"></span> SapienSeq · Sapienza ·
+          <span data-i18n="rights">Tutti i diritti riservati</span>
+        </p>
       </footer>
     </main>
   </div>
 
-
+  <!-- MENU E CAMBIO LINGUA -->
   <script>
-  const translations = {
-    it: {
-      people: "Persone",
-      professors: "Professori",
-      professor: "Professore",
-      phdStudents: "Dottorandi",
-      phdStudent: "Dottorando/a",
-      researchFellows: "Assegnisti di ricerca",
-      researchFellow: "Assegnista di ricerca",
+    const translations = {
+      it: {
+        skipContent: "Vai al contenuto",
+        homeLabel: "SapienSeq — pagina iniziale",
+        navigation: "Navigazione principale",
+        pageIndex: "In questa pagina",
+        overview: "Presentazione",
+        research: "Ricerca",
+        people: "Persone",
+        publications: "Pubblicazioni",
+        contact: "Contatti",
 
-      labName: "Nome del Laboratorio",
-      institution: "Dipartimento / Università",
-      overview: "Presentazione",
-      research: "Linee di ricerca",
-      publications: "Pubblicazioni",
-      contact: "Contatti",
-      pageIndex: "In questa pagina",
-      exploreResearch: "Esplora la ricerca",
-      skipContent: "Vai al contenuto",
+        introFirst:
+          "SapienSeq unisce bioingegneria e bioinformatica per studiare le Tumor Educated Platelets.",
+        introSecond:
+          "La nostra ricerca si sviluppa nell’ambito del progetto FIS2.",
+        exploreResearch: "Esplora la ricerca",
+        meetTeam: "Il nostro gruppo",
+        project: "Progetto",
+        disciplines: "Bioingegneria · Bioinformatica",
 
-      heroTitle: "Titolo",
-      heroDescription: "Descrizione del laboratorio",
-      introduction: "Testo introduttivo",
-      example: "Esempio",
+        overviewText:
+          "SapienSeq è un laboratorio di Sapienza presso il Dipartimento di Ingegneria Informatica, Automatica e Gestionale. Il gruppo si occupa di bioingegneria e bioinformatica.",
+        department:
+          "Dipartimento di Ingegneria Informatica, Automatica e Gestionale",
 
-      modularity: "Organizzazione modulare",
-      structureFunction: "Relazioni struttura–funzione",
-      timeVarying: "Connettività variabile nel tempo",
-      crossSpecies: "Studi tra specie",
+        bioengineering: "Bioingegneria",
+        bioengineeringText:
+          "Approcci ingegneristici allo studio dei sistemi biologici.",
+        bioinformatics: "Bioinformatica",
+        bioinformaticsText:
+          "Metodi computazionali per l’analisi dei dati biologici.",
+        plateletsText:
+          "Studio delle Tumor Educated Platelets nell’ambito del progetto FIS2.",
+        fisProject: "Progetto FIS2",
+        fisText:
+          "Il progetto nell’ambito del quale sviluppiamo la nostra ricerca.",
 
-      publicationsIntro: "Elenco delle pubblicazioni",
-      authors: "Autori",
-      writeUs: "Scrivici",
-      address: "Indirizzo",
-      message: "Messaggio",
-      name: "Nome",
-      send: "Invia",
-      formNote: "Modulo da collegare a un servizio di invio.",
-      namePlaceholder: "Nome Cognome",
-      emailPlaceholder: "nome@dominio.it",
-      messagePlaceholder: "Scrivi qui...",
+        professors: "Professori",
+        professorFemale: "Professoressa",
+        professorMale: "Professore",
+        head: "Responsabile del laboratorio",
+        phdStudents: "Dottorandi",
+        phdStudent: "Dottorando",
+        researchFellows: "Assegnisti di ricerca",
+        researchFellow: "Assegnista di ricerca",
 
-      openMenu: "Apri menu",
-      closeMenu: "Chiudi menu",
-      mainNavigation: "Navigazione principale",
-      homeLabel: "Home laboratorio",
-      description:
-        "Sito web del Laboratorio: ricerca, persone, pubblicazioni e contatti.",
-      rights: "Tutti i diritti riservati"
-    },
+        comingSoon: "In aggiornamento",
+        rights: "Tutti i diritti riservati",
+        openMenu: "Apri menu",
+        closeMenu: "Chiudi menu",
+        description:
+          "SapienSeq: bioingegneria e bioinformatica per lo studio delle Tumor Educated Platelets nell’ambito del progetto FIS2."
+      },
 
-    en: {
-      people: "People",
-      professors: "Professors",
-      professor: "Professor",
-      phdStudents: "PhD students",
-      phdStudent: "PhD student",
-      researchFellows: "Research fellows",
-      researchFellow: "Research fellow",
+      en: {
+        skipContent: "Skip to content",
+        homeLabel: "SapienSeq — home",
+        navigation: "Main navigation",
+        pageIndex: "On this page",
+        overview: "Overview",
+        research: "Research",
+        people: "People",
+        publications: "Publications",
+        contact: "Contact",
 
-      labName: "Laboratory Name",
-      institution: "Department / University",
-      overview: "Overview",
-      research: "Lines of research",
-      publications: "Publications",
-      contact: "Contact",
-      pageIndex: "On this page",
-      exploreResearch: "Explore our research",
-      skipContent: "Skip to content",
+        introFirst:
+          "SapienSeq brings together bioengineering and bioinformatics to study Tumor Educated Platelets.",
+        introSecond:
+          "Our research is carried out within the FIS2 project.",
+        exploreResearch: "Explore our research",
+        meetTeam: "Meet our team",
+        project: "Project",
+        disciplines: "Bioengineering · Bioinformatics",
 
-      heroTitle: "Title",
-      heroDescription: "Laboratory description",
-      introduction: "Introductory text",
-      example: "Example",
+        overviewText:
+          "SapienSeq is a Sapienza laboratory within the Department of Computer, Control and Management Engineering. The group works in bioengineering and bioinformatics.",
+        department:
+          "Department of Computer, Control and Management Engineering",
 
-      modularity: "Modular organization",
-      structureFunction: "Structure–function relationships",
-      timeVarying: "Time-varying connectivity",
-      crossSpecies: "Cross-species studies",
+        bioengineering: "Bioengineering",
+        bioengineeringText:
+          "Engineering approaches to the study of biological systems.",
+        bioinformatics: "Bioinformatics",
+        bioinformaticsText:
+          "Computational methods for biological data analysis.",
+        plateletsText:
+          "Study of Tumor Educated Platelets within the FIS2 project.",
+        fisProject: "FIS2 project",
+        fisText:
+          "The project within which we carry out our research.",
 
-      publicationsIntro: "List of publications",
-      authors: "Authors",
-      writeUs: "Get in touch",
-      address: "Address",
-      message: "Message",
-      name: "Name",
-      send: "Send",
-      formNote: "Connect this form to a message delivery service.",
-      namePlaceholder: "First and last name",
-      emailPlaceholder: "name@example.com",
-      messagePlaceholder: "Write your message here...",
+        professors: "Professors",
+        professorFemale: "Professor",
+        professorMale: "Professor",
+        head: "Head of the laboratory",
+        phdStudents: "PhD students",
+        phdStudent: "PhD student",
+        researchFellows: "Research fellows",
+        researchFellow: "Research fellow",
 
-      openMenu: "Open menu",
-      closeMenu: "Close menu",
-      mainNavigation: "Main navigation",
-      homeLabel: "Laboratory home",
-      description:
-        "Laboratory website: research, people, publications and contact.",
-      rights: "All rights reserved"
-    }
-  };
-
-  const menuButton = document.getElementById("mobile-menu");
-  const navigation = document.getElementById("primary-nav");
-  let currentLanguage = "it";
-
-  /*
-   * Collega i testi dell'HTML originale al dizionario.
-   * Per nuovi testi puoi usare direttamente data-i18n="chiave".
-   */
-  const textBindings = {
-    ".brand__title": "labName",
-    ".brand__subtitle": "institution",
-    ".skip-link": "skipContent",
-    ".toc h2": "pageIndex",
-
-    ".hero h1": "heroTitle",
-    ".hero-copy > p": "heroDescription",
-    ".hero-actions a[href='#research']": "exploreResearch",
-    ".hero-actions a[href='#contact']": "contact",
-
-    "#overview > h2": "overview",
-    "#overview > p": "introduction",
-    "#overview .bullet li": "example",
-
-    "#research > h2": "research",
-    "#research .card-body p": "example",
-    "#modularity h3": "modularity",
-    "#structure-function h3": "structureFunction",
-    "#time-varying h3": "timeVarying",
-    "#cross-species h3": "crossSpecies",
-
-    "#publications > h2": "publications",
-    "#publications > p": "publicationsIntro",
-    "#publications .pubs strong": "authors",
-
-    "#contact > h2": "contact",
-    ".contact-card h3": "writeUs",
-    ".contact-form h3": "message",
-    ".contact-form label:nth-of-type(1) > span": "name",
-    ".contact-form label:nth-of-type(3) > span": "message",
-    ".contact-form button[type='submit']": "send",
-    ".contact-form .note": "formNote"
-  };
-
-  Object.entries(textBindings).forEach(([selector, key]) => {
-    document.querySelectorAll(selector).forEach(element => {
-      element.dataset.i18n = key;
-    });
-  });
-
-  const sectionKeys = {
-    overview: "overview",
-    research: "research",
-    people: "people",
-    publications: "publications",
-    contact: "contact"
-  };
-
-  Object.entries(sectionKeys).forEach(([id, key]) => {
-    document.querySelectorAll(
-      `.nav a[href="#${id}"], .toc a[href="#${id}"]`
-    ).forEach(element => {
-      element.dataset.i18n = key;
-    });
-  });
-
-  // Etichetta dell'indirizzo nel blocco contatti originale.
-  document.querySelectorAll(".contact-card .meta").forEach(element => {
-    if (element.textContent.trim() === "Indirizzo") {
-      element.dataset.i18n = "address";
-    }
-  });
-
-  // Traduce anche i segnaposto delle citazioni originali.
-  // Quando inserirai pubblicazioni reali, mantieni i titoli originali.
-  const publicationPlaceholders = [];
-
-  document.querySelectorAll(".pubs li").forEach(item => {
-    item.childNodes.forEach(node => {
-      if (
-        node.nodeType === Node.TEXT_NODE &&
-        node.textContent.includes("(Anno). Titolo.")
-      ) {
-        publicationPlaceholders.push(node);
+        comingSoon: "Coming soon",
+        rights: "All rights reserved",
+        openMenu: "Open menu",
+        closeMenu: "Close menu",
+        description:
+          "SapienSeq: bioengineering and bioinformatics for the study of Tumor Educated Platelets within the FIS2 project."
       }
-    });
-  });
+    };
 
-  function updateMenuLabel() {
-    const isOpen = menuButton.getAttribute("aria-expanded") === "true";
+    const menuButton = document.getElementById("mobile-menu");
+    const navigation = document.getElementById("primary-nav");
+    const languageButtons =
+      document.querySelectorAll(".language-button");
 
-    menuButton.setAttribute(
-      "aria-label",
-      translations[currentLanguage][isOpen ? "closeMenu" : "openMenu"]
-    );
-  }
+    let currentLanguage = "it";
 
-  function closeMenu() {
-    navigation.classList.remove("nav-open");
-    menuButton.classList.remove("active");
-    menuButton.setAttribute("aria-expanded", "false");
-    document.body.classList.remove("menu-open");
-    updateMenuLabel();
-  }
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
 
-  function setLanguage(language) {
-    if (!translations[language]) return;
+    function updateMenuLabel() {
+      const isOpen =
+        menuButton.getAttribute("aria-expanded") === "true";
 
-    currentLanguage = language;
-    const text = translations[language];
-
-    document.documentElement.lang = language;
-    document.title = text.labName;
-
-    document.querySelectorAll("[data-i18n]").forEach(element => {
-      const value = text[element.dataset.i18n];
-
-      if (value !== undefined) {
-        element.textContent = value;
-      }
-    });
-
-    document.querySelectorAll(".language-button").forEach(button => {
-      button.setAttribute(
-        "aria-pressed",
-        String(button.dataset.lang === language)
+      menuButton.setAttribute(
+        "aria-label",
+        translations[currentLanguage][
+          isOpen ? "closeMenu" : "openMenu"
+        ]
       );
+    }
+
+    function setLanguage(language) {
+      if (!Object.hasOwn(translations, language)) return;
+
+      currentLanguage = language;
+      const text = translations[language];
+
+      document.documentElement.lang = language;
+
+      document.querySelectorAll("[data-i18n]").forEach(element => {
+        const key = element.dataset.i18n;
+
+        if (text[key] !== undefined) {
+          element.textContent = text[key];
+        }
+      });
+
+      document.querySelectorAll("[data-i18n-aria]").forEach(element => {
+        const key = element.dataset.i18nAria;
+
+        if (text[key] !== undefined) {
+          element.setAttribute("aria-label", text[key]);
+        }
+      });
+
+      languageButtons.forEach(button => {
+        button.setAttribute(
+          "aria-pressed",
+          String(button.dataset.lang === language)
+        );
+      });
+
+      document.querySelector('meta[name="description"]').setAttribute(
+        "content",
+        text.description
+      );
+
+      updateMenuLabel();
+
+      try {
+        localStorage.setItem("sapienseq-language", language);
+      } catch {
+        // Il cambio lingua funziona anche senza localStorage.
+      }
+    }
+
+    function closeMenu() {
+      navigation.classList.remove("nav-open");
+      menuButton.classList.remove("active");
+      menuButton.setAttribute("aria-expanded", "false");
+      updateMenuLabel();
+    }
+
+    languageButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        setLanguage(button.dataset.lang);
+      });
     });
 
-    navigation.setAttribute("aria-label", text.mainNavigation);
-    document.querySelector(".brand").setAttribute(
-      "aria-label",
-      text.homeLabel
-    );
+    menuButton.addEventListener("click", () => {
+      const isOpen = navigation.classList.toggle("nav-open");
 
-    document.querySelector(".toc").setAttribute(
-      "aria-label",
-      text.pageIndex
-    );
-
-    document.querySelector('meta[name="description"]').setAttribute(
-      "content",
-      text.description
-    );
-
-    document.querySelector('input[name="name"]').placeholder =
-      text.namePlaceholder;
-
-    document.querySelector('input[name="email"]').placeholder =
-      text.emailPlaceholder;
-
-    document.querySelector('textarea[name="message"]').placeholder =
-      text.messagePlaceholder;
-
-    publicationPlaceholders.forEach(node => {
-      node.textContent = language === "it"
-        ? " (Anno). Titolo. "
-        : " (Year). Title. ";
+      menuButton.classList.toggle("active", isOpen);
+      menuButton.setAttribute("aria-expanded", String(isOpen));
+      updateMenuLabel();
     });
 
-    // Ricostruisce il footer senza perdere lo span dell'anno.
-    const footer = document.querySelector(".site-footer p");
-    const year = document.createElement("span");
-    year.id = "year";
-    year.textContent = new Date().getFullYear();
+    navigation.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", closeMenu);
+    });
 
-    footer.replaceChildren(
-      "© ",
-      year,
-      ` ${text.labName} · ${text.rights}`
+    document.addEventListener("click", event => {
+      if (
+        !navigation.contains(event.target) &&
+        !menuButton.contains(event.target)
+      ) {
+        closeMenu();
+      }
+    });
+
+    document.addEventListener("keydown", event => {
+      if (
+        event.key === "Escape" &&
+        menuButton.getAttribute("aria-expanded") === "true"
+      ) {
+        closeMenu();
+        menuButton.focus();
+      }
+    });
+
+    window.matchMedia("(max-width: 980px)").addEventListener(
+      "change",
+      closeMenu
     );
 
-    updateMenuLabel();
+    let initialLanguage = "it";
 
     try {
-      localStorage.setItem("lab-language", language);
+      const savedLanguage =
+        localStorage.getItem("sapienseq-language");
+
+      if (Object.hasOwn(translations, savedLanguage)) {
+        initialLanguage = savedLanguage;
+      }
     } catch {
-      // Il selettore funziona anche se il salvataggio è bloccato.
+      // Italiano come lingua iniziale.
     }
-  }
 
-  document.querySelectorAll(".language-button").forEach(button => {
-    button.addEventListener("click", () => {
-      setLanguage(button.dataset.lang);
-    });
-  });
-
-  menuButton.addEventListener("click", () => {
-    const isOpen = navigation.classList.toggle("nav-open");
-
-    menuButton.classList.toggle("active", isOpen);
-    menuButton.setAttribute("aria-expanded", String(isOpen));
-    document.body.classList.toggle("menu-open", isOpen);
-    updateMenuLabel();
-  });
-
-  navigation.querySelectorAll('a[href^="#"]').forEach(link => {
-    link.addEventListener("click", closeMenu);
-  });
-
-  document.addEventListener("click", event => {
-    if (
-      !navigation.contains(event.target) &&
-      !menuButton.contains(event.target)
-    ) {
-      closeMenu();
-    }
-  });
-
-  document.addEventListener("keydown", event => {
-    if (
-      event.key === "Escape" &&
-      menuButton.getAttribute("aria-expanded") === "true"
-    ) {
-      closeMenu();
-      menuButton.focus();
-    }
-  });
-
-  window.matchMedia("(max-width: 860px)").addEventListener(
-    "change",
-    closeMenu
-  );
-
-  let initialLanguage = "it";
-
-  try {
-    const savedLanguage = localStorage.getItem("lab-language");
-    if (translations[savedLanguage]) {
-      initialLanguage = savedLanguage;
-    }
-  } catch {
-    // Italiano come lingua iniziale.
-  }
-
-  setLanguage(initialLanguage);
-</script>
-
-
+    setLanguage(initialLanguage);
+  </script>
 </body>
 </html>
