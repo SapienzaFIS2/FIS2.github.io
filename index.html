@@ -333,40 +333,347 @@
     </main>
   </div>
 
+
   <script>
-    // anno footer
-    document.getElementById('year').textContent = new Date().getFullYear();
+  const translations = {
+    it: {
+      people: "Persone",
+      professors: "Professori",
+      professor: "Professore",
+      phdStudents: "Dottorandi",
+      phdStudent: "Dottorando/a",
+      researchFellows: "Assegnisti di ricerca",
+      researchFellow: "Assegnista di ricerca",
 
-    // menu mobile
-    const btn = document.getElementById('mobile-menu');
-    const nav = document.getElementById('primary-nav');
+      labName: "Nome del Laboratorio",
+      institution: "Dipartimento / Università",
+      overview: "Presentazione",
+      research: "Linee di ricerca",
+      publications: "Pubblicazioni",
+      contact: "Contatti",
+      pageIndex: "In questa pagina",
+      exploreResearch: "Esplora la ricerca",
+      skipContent: "Vai al contenuto",
 
-    btn.addEventListener('click', () => {
-      const isOpen = nav.classList.toggle('nav-open');
-      btn.classList.toggle('active', isOpen);
-      btn.setAttribute('aria-expanded', String(isOpen));
-      document.body.classList.toggle('menu-open', isOpen);
+      heroTitle: "Titolo",
+      heroDescription: "Descrizione del laboratorio",
+      introduction: "Testo introduttivo",
+      example: "Esempio",
+
+      modularity: "Organizzazione modulare",
+      structureFunction: "Relazioni struttura–funzione",
+      timeVarying: "Connettività variabile nel tempo",
+      crossSpecies: "Studi tra specie",
+
+      publicationsIntro: "Elenco delle pubblicazioni",
+      authors: "Autori",
+      writeUs: "Scrivici",
+      address: "Indirizzo",
+      message: "Messaggio",
+      name: "Nome",
+      send: "Invia",
+      formNote: "Modulo da collegare a un servizio di invio.",
+      namePlaceholder: "Nome Cognome",
+      emailPlaceholder: "nome@dominio.it",
+      messagePlaceholder: "Scrivi qui...",
+
+      openMenu: "Apri menu",
+      closeMenu: "Chiudi menu",
+      mainNavigation: "Navigazione principale",
+      homeLabel: "Home laboratorio",
+      description:
+        "Sito web del Laboratorio: ricerca, persone, pubblicazioni e contatti.",
+      rights: "Tutti i diritti riservati"
+    },
+
+    en: {
+      people: "People",
+      professors: "Professors",
+      professor: "Professor",
+      phdStudents: "PhD students",
+      phdStudent: "PhD student",
+      researchFellows: "Research fellows",
+      researchFellow: "Research fellow",
+
+      labName: "Laboratory Name",
+      institution: "Department / University",
+      overview: "Overview",
+      research: "Lines of research",
+      publications: "Publications",
+      contact: "Contact",
+      pageIndex: "On this page",
+      exploreResearch: "Explore our research",
+      skipContent: "Skip to content",
+
+      heroTitle: "Title",
+      heroDescription: "Laboratory description",
+      introduction: "Introductory text",
+      example: "Example",
+
+      modularity: "Modular organization",
+      structureFunction: "Structure–function relationships",
+      timeVarying: "Time-varying connectivity",
+      crossSpecies: "Cross-species studies",
+
+      publicationsIntro: "List of publications",
+      authors: "Authors",
+      writeUs: "Get in touch",
+      address: "Address",
+      message: "Message",
+      name: "Name",
+      send: "Send",
+      formNote: "Connect this form to a message delivery service.",
+      namePlaceholder: "First and last name",
+      emailPlaceholder: "name@example.com",
+      messagePlaceholder: "Write your message here...",
+
+      openMenu: "Open menu",
+      closeMenu: "Close menu",
+      mainNavigation: "Main navigation",
+      homeLabel: "Laboratory home",
+      description:
+        "Laboratory website: research, people, publications and contact.",
+      rights: "All rights reserved"
+    }
+  };
+
+  const menuButton = document.getElementById("mobile-menu");
+  const navigation = document.getElementById("primary-nav");
+  let currentLanguage = "it";
+
+  /*
+   * Collega i testi dell'HTML originale al dizionario.
+   * Per nuovi testi puoi usare direttamente data-i18n="chiave".
+   */
+  const textBindings = {
+    ".brand__title": "labName",
+    ".brand__subtitle": "institution",
+    ".skip-link": "skipContent",
+    ".toc h2": "pageIndex",
+
+    ".hero h1": "heroTitle",
+    ".hero-copy > p": "heroDescription",
+    ".hero-actions a[href='#research']": "exploreResearch",
+    ".hero-actions a[href='#contact']": "contact",
+
+    "#overview > h2": "overview",
+    "#overview > p": "introduction",
+    "#overview .bullet li": "example",
+
+    "#research > h2": "research",
+    "#research .card-body p": "example",
+    "#modularity h3": "modularity",
+    "#structure-function h3": "structureFunction",
+    "#time-varying h3": "timeVarying",
+    "#cross-species h3": "crossSpecies",
+
+    "#publications > h2": "publications",
+    "#publications > p": "publicationsIntro",
+    "#publications .pubs strong": "authors",
+
+    "#contact > h2": "contact",
+    ".contact-card h3": "writeUs",
+    ".contact-form h3": "message",
+    ".contact-form label:nth-of-type(1) > span": "name",
+    ".contact-form label:nth-of-type(3) > span": "message",
+    ".contact-form button[type='submit']": "send",
+    ".contact-form .note": "formNote"
+  };
+
+  Object.entries(textBindings).forEach(([selector, key]) => {
+    document.querySelectorAll(selector).forEach(element => {
+      element.dataset.i18n = key;
     });
+  });
 
-    // chiudi quando clicchi un link
-    nav.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.addEventListener('click', () => {
-        nav.classList.remove('nav-open');
-        btn.classList.remove('active');
-        btn.setAttribute('aria-expanded', 'false');
-        document.body.classList.remove('menu-open');
-      });
+  const sectionKeys = {
+    overview: "overview",
+    research: "research",
+    people: "people",
+    publications: "publications",
+    contact: "contact"
+  };
+
+  Object.entries(sectionKeys).forEach(([id, key]) => {
+    document.querySelectorAll(
+      `.nav a[href="#${id}"], .toc a[href="#${id}"]`
+    ).forEach(element => {
+      element.dataset.i18n = key;
     });
+  });
 
-    // chiudi cliccando fuori
-    document.addEventListener('click', (e) => {
-      if (!nav.contains(e.target) && !btn.contains(e.target)) {
-        nav.classList.remove('nav-open');
-        btn.classList.remove('active');
-        btn.setAttribute('aria-expanded', 'false');
-        document.body.classList.remove('menu-open');
+  // Etichetta dell'indirizzo nel blocco contatti originale.
+  document.querySelectorAll(".contact-card .meta").forEach(element => {
+    if (element.textContent.trim() === "Indirizzo") {
+      element.dataset.i18n = "address";
+    }
+  });
+
+  // Traduce anche i segnaposto delle citazioni originali.
+  // Quando inserirai pubblicazioni reali, mantieni i titoli originali.
+  const publicationPlaceholders = [];
+
+  document.querySelectorAll(".pubs li").forEach(item => {
+    item.childNodes.forEach(node => {
+      if (
+        node.nodeType === Node.TEXT_NODE &&
+        node.textContent.includes("(Anno). Titolo.")
+      ) {
+        publicationPlaceholders.push(node);
       }
     });
-  </script>
+  });
+
+  function updateMenuLabel() {
+    const isOpen = menuButton.getAttribute("aria-expanded") === "true";
+
+    menuButton.setAttribute(
+      "aria-label",
+      translations[currentLanguage][isOpen ? "closeMenu" : "openMenu"]
+    );
+  }
+
+  function closeMenu() {
+    navigation.classList.remove("nav-open");
+    menuButton.classList.remove("active");
+    menuButton.setAttribute("aria-expanded", "false");
+    document.body.classList.remove("menu-open");
+    updateMenuLabel();
+  }
+
+  function setLanguage(language) {
+    if (!translations[language]) return;
+
+    currentLanguage = language;
+    const text = translations[language];
+
+    document.documentElement.lang = language;
+    document.title = text.labName;
+
+    document.querySelectorAll("[data-i18n]").forEach(element => {
+      const value = text[element.dataset.i18n];
+
+      if (value !== undefined) {
+        element.textContent = value;
+      }
+    });
+
+    document.querySelectorAll(".language-button").forEach(button => {
+      button.setAttribute(
+        "aria-pressed",
+        String(button.dataset.lang === language)
+      );
+    });
+
+    navigation.setAttribute("aria-label", text.mainNavigation);
+    document.querySelector(".brand").setAttribute(
+      "aria-label",
+      text.homeLabel
+    );
+
+    document.querySelector(".toc").setAttribute(
+      "aria-label",
+      text.pageIndex
+    );
+
+    document.querySelector('meta[name="description"]').setAttribute(
+      "content",
+      text.description
+    );
+
+    document.querySelector('input[name="name"]').placeholder =
+      text.namePlaceholder;
+
+    document.querySelector('input[name="email"]').placeholder =
+      text.emailPlaceholder;
+
+    document.querySelector('textarea[name="message"]').placeholder =
+      text.messagePlaceholder;
+
+    publicationPlaceholders.forEach(node => {
+      node.textContent = language === "it"
+        ? " (Anno). Titolo. "
+        : " (Year). Title. ";
+    });
+
+    // Ricostruisce il footer senza perdere lo span dell'anno.
+    const footer = document.querySelector(".site-footer p");
+    const year = document.createElement("span");
+    year.id = "year";
+    year.textContent = new Date().getFullYear();
+
+    footer.replaceChildren(
+      "© ",
+      year,
+      ` ${text.labName} · ${text.rights}`
+    );
+
+    updateMenuLabel();
+
+    try {
+      localStorage.setItem("lab-language", language);
+    } catch {
+      // Il selettore funziona anche se il salvataggio è bloccato.
+    }
+  }
+
+  document.querySelectorAll(".language-button").forEach(button => {
+    button.addEventListener("click", () => {
+      setLanguage(button.dataset.lang);
+    });
+  });
+
+  menuButton.addEventListener("click", () => {
+    const isOpen = navigation.classList.toggle("nav-open");
+
+    menuButton.classList.toggle("active", isOpen);
+    menuButton.setAttribute("aria-expanded", String(isOpen));
+    document.body.classList.toggle("menu-open", isOpen);
+    updateMenuLabel();
+  });
+
+  navigation.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener("click", closeMenu);
+  });
+
+  document.addEventListener("click", event => {
+    if (
+      !navigation.contains(event.target) &&
+      !menuButton.contains(event.target)
+    ) {
+      closeMenu();
+    }
+  });
+
+  document.addEventListener("keydown", event => {
+    if (
+      event.key === "Escape" &&
+      menuButton.getAttribute("aria-expanded") === "true"
+    ) {
+      closeMenu();
+      menuButton.focus();
+    }
+  });
+
+  window.matchMedia("(max-width: 860px)").addEventListener(
+    "change",
+    closeMenu
+  );
+
+  let initialLanguage = "it";
+
+  try {
+    const savedLanguage = localStorage.getItem("lab-language");
+    if (translations[savedLanguage]) {
+      initialLanguage = savedLanguage;
+    }
+  } catch {
+    // Italiano come lingua iniziale.
+  }
+
+  setLanguage(initialLanguage);
+</script>
+
+
 </body>
 </html>
